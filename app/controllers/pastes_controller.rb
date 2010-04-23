@@ -71,6 +71,7 @@ class PastesController < ApplicationController
   # PUT /pastes/1.xml
   def update
     @paste = Paste.find(params[:id])
+    @paste.language.downcase!
 
     respond_to do |format|
       if @paste.update_attributes(params[:paste])

@@ -6,16 +6,18 @@
 	<%= paste_title(@paste.title) %>:
 </p>
 	
-  <%= @code %>
+<%= @code %>
 
+<p>
 <%= link_to image_tag('back.png', :alt=>"Go back to index."), pastes_path %>
 <%= link_to image_tag('cut.png', :alt=>"Delete this paste."), @paste, :confirm => 'Are you sure?', :method => :delete %>
 <%= link_to image_tag('new.png', :alt=>"Make a new paste."), new_paste_path %>
 <%= link_to image_tag('fix.png', :alt=>"Edit this paste."), edit_paste_path(@paste) %>
 <%= link_to image_tag('toggle.png', :alt=>"Toggle line numbers."), toggle(params[:line_numbers]) %>
 <%= link_to image_tag('chat.png', :alt=>"Leave a comment"), '?comment' %>
+</p>
 <ul>
   <li>chat button could be for comments</li>
   <li>chat button or another button could invoke the bot to send a url to the channel</li>
   <li>or we can implement an RSS feed and have the bot watch that for new pastes, and drop the urls in the channel that way</li>
-
+</ul>
