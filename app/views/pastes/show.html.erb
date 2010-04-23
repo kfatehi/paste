@@ -1,5 +1,7 @@
+<h3><%= link_to @paste_url %></h3>
+
 <p class="show-header">
-	<%= @paste.created_at.strftime("At %I:%M%p on %B %d,%Y") %>,
+	<%= @paste.created_at.strftime("At %I:%M %p on %B %d,%Y") %>,
 	<%=h @paste.author %> pasted some <%=h @paste.language %> code
 	<%= paste_title(@paste.title) %>:
 </p>

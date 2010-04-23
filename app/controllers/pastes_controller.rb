@@ -15,6 +15,7 @@ class PastesController < ApplicationController
   # GET /pastes/1.xml
   def show
     @paste = Paste.find(params[:id])
+    @paste_url = "http://#{request.host}/#{@paste.id}"
     tokens = CodeRay.scan(@paste.body, @paste.language.to_sym)
     @line_numbers = params[:line_numbers]
     if @line_numbers
