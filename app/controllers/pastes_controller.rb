@@ -16,12 +16,12 @@ class PastesController < ApplicationController
   def show
     @paste = Paste.find(params[:id])
     tokens = CodeRay.scan(@paste.body, @paste.language.to_sym)
-    if params[:line_numbers].to_i == 1
-      @code = tokens.html(:line_numbers => :inline, :wrap => :div, :css => :class)
+    @line_numbers = params[:line_numbers]
+    if @line_numbers
+      @code = tokens.html(:line_numbers => @line_numbers.to_sym, :wrap => :div, :css => :class)
     else
       @code = tokens.html(:line_numbers => nil, :wrap => :div, :css => :class)
     end
-    else
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @paste }
