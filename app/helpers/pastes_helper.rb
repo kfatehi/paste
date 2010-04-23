@@ -3,6 +3,7 @@ module PastesHelper
   def languages
     %w(
 Ruby
+RHTML
 C
 C++
 CSS
@@ -16,7 +17,6 @@ JSON
 Nitro-XHTML
 PHP
 Python
-RHTML
 Scheme
 SQL
 XML
