@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+	<th>Author</th>
     <th>Title</th>
     <th>Language</th>
     <th>Body</th>
@@ -9,6 +10,7 @@
 
 <% @pastes.each do |paste| %>
   <tr>
+	<td><%=h paste.author %></td>
     <td><%=h paste.title %></td>
     <td><%=h paste.language %></td>
     <td><%#=h paste.body %></td>
