@@ -1,5 +1,5 @@
 .CodeRay {
-  background-color: #000;
+  background-color: #2F2F2F;
   border: 1px solid black;
   font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
   color: #E6E0DB;
@@ -7,7 +7,7 @@
   overflow: auto;
   font-size: 16px;
   margin-left: auto;
-  margin-right: 10px;
+  margin-right: 20px;
   width: 90%;
   margin-top: 50px;
   margin-bottom: 50px;

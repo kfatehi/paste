@@ -1,27 +1,13 @@
-<h1>Listing pastes</h1>
-
-<table class="paste-table">
-  <tr>
-	<th>Age</th>
-	<th>Author</th>
-    <th>Title</th>
-    <th>Syntax</th>
-  </tr>
-
+<div class="new"><%= link_to image_tag('new.png', :alt=>"Make a new paste."), new_paste_path %></div>
+<table class="index">
 <% @pastes.each do |paste| %>
   <tr>
-	<td><%= time_ago_in_words(paste.created_at) %>
-	<td><%=h paste.author %></td>
-    <td><%=h paste.title %></td>
-    <td><%=h paste.language %></td>
-    <td><%#=h paste.body %></td>
-    <td><%= link_to 'Show', paste %></td>
-    <td><%= link_to 'Edit', edit_paste_path(paste) %></td>
-    <td><%= link_to 'Destroy', paste, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td>
+		<%= time_ago_in_words(paste.created_at) %> ago,<br/>
+		<span class="author"><%=h paste.author %></span> pasted some <%=h paste.language %> code<br/>
+		<span class="title"><%= paste_title(paste.title) %></span>
+	</td>
+	<td><%= link_to image_tag('show.png', :alt=>"Display this paste."), paste %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Paste?', new_paste_path %>

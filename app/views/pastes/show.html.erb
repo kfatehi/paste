@@ -1,13 +1,13 @@
-<p>
-	<%= time_ago_in_words(@paste.created_at) %> ago,
+<p class="show-header">
+	<%= @paste.created_at.strftime("At %I:%M%p on %B %d,%Y") %>,
 	<%=h @paste.author %> pasted some <%=h @paste.language %> code
-	<%= paste_title(@paste.title) %> below:
+	<%= paste_title(@paste.title) %>:
 </p>
 	
   <%= @code %>
 
-
-
-<%= link_to 'Edit', edit_paste_path(@paste) %> |
-<%= link_to 'Back', pastes_path %> | 
-<%= link_to 'Toggle Line Numbers', toggle(params[:line_numbers]) %>
+<%= link_to image_tag('back.png', :alt=>"Go back to index."), pastes_path %>
+<%= link_to image_tag('new.png', :alt=>"Make a new paste."), new_paste_path %>
+<%#= link_to image_tag('fix.png', :alt=>"Edit this paste."), edit_paste_path(@paste) %>
+<%= link_to image_tag('toggle.png', :alt=>"Toggle line numbers."), toggle(params[:line_numbers]) %>
+<%= link_to image_tag('chat.png', :alt=>"Leave a comment"), '?comment' %>
