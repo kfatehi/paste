@@ -15,8 +15,8 @@ class PastesController < ApplicationController
   # GET /pastes/1.xml
   def show
     @paste = Paste.find(params[:id])
-    tokens = CodeRay.scan(@paste.body, @paste.language.downcase!.to_sym)
-    if params[:line_numbers]
+    tokens = CodeRay.scan(@paste.body, @paste.language.to_sym)
+    if params[:line_numbers].to_i == 1
       @code = tokens.html(:line_numbers => :inline, :wrap => :div, :css => :class)
     else
       @code = tokens.html(:line_numbers => nil, :wrap => :div, :css => :class)
@@ -48,6 +48,7 @@ class PastesController < ApplicationController
   # POST /pastes.xml
   def create
     @paste = Paste.new(params[:paste])
+    @paste.language.downcase!
 
     respond_to do |format|
       if @paste.save
