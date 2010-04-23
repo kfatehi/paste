@@ -3,7 +3,7 @@ class PastesController < ApplicationController
   # GET /pastes
   # GET /pastes.xml
   def index
-    @pastes = Paste.all
+    @pastes = Paste.find(:all, :order=> 'id DESC')
 
     respond_to do |format|
       format.html # index.html.erb
