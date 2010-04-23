@@ -1,15 +1,16 @@
 <h1>Listing pastes</h1>
 
-<table>
+<table class="paste-table">
   <tr>
+	<th>Age</th>
 	<th>Author</th>
     <th>Title</th>
-    <th>Language</th>
-    <th>Body</th>
+    <th>Syntax</th>
   </tr>
 
 <% @pastes.each do |paste| %>
   <tr>
+	<td><%= time_ago_in_words(paste.created_at) %>
 	<td><%=h paste.author %></td>
     <td><%=h paste.title %></td>
     <td><%=h paste.language %></td>
@@ -23,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New paste', new_paste_path %>
+<%= link_to 'New Paste?', new_paste_path %>

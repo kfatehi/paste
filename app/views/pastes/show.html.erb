@@ -1,25 +1,13 @@
 <p>
-  <b>Author:</b>
-  <%=h @paste.author %>
+	<%= time_ago_in_words(@paste.created_at) %> ago,
+	<%=h @paste.author %> pasted some <%=h @paste.language %> code
+	<%= paste_title(@paste.title) %> below:
 </p>
-
-<p>
-  <b>Title:</b>
-  <%=h @paste.title %>
-</p>
-
-<p>
-  <b>Language:</b>
-  <%=h @paste.language %>
-</p>
-
-<p>
-  <b>Body:</b>
 	
   <%= @code %>
 
-</p>
 
 
 <%= link_to 'Edit', edit_paste_path(@paste) %> |
-<%= link_to 'Back', pastes_path %>
+<%= link_to 'Back', pastes_path %> | 
+<%= link_to 'Toggle Line Numbers', toggle(params[:line_numbers]) %>
