@@ -20,7 +20,10 @@ Rails::Initializer.run do |config|
     config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
     config.gem "coderay"
+<<<<<<< HEAD
+=======
     #config.gem "sqlite3-ruby"
+>>>>>>> de450b0e6b4ba1b552ac0a04a9840697032370e2
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
