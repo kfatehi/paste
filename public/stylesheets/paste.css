@@ -3,6 +3,7 @@ a {
 }
 
 body {
+    margin: 40px;
     background-color: #d6d6d6;
     font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
     color: #000;
@@ -19,7 +20,7 @@ table.index td {
     padding: 10px;
 }
 
-.new {
+.left {
     float: left;
 }
 
@@ -29,4 +30,51 @@ table.index td {
 
 .author {
     color: #C61616;
+}
+
+#paste_author {
+    margin: 0px;
+    background-color: #5E110C;
+    color: #E6E0DB;    
+    border: none;
+    width: 125px;
+    font-size: 16px;
+    font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
+    text-align: center;
+}
+
+#paste_language {
+    background-color: #2F2F2F;
+    color: #E6E0DB;
+    margin: 0px; 
+    border: none;
+    height: 22px;
+    width: 110px;
+    font-size: 16px;
+}
+
+#paste_title {
+    margin: 0px;
+    background-color: #5E5909;
+    color: #E6E0DB;    
+    border: none;
+    width: 365px;
+    font-size: 16px;
+    font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
+    text-align: center;
+}
+
+#paste_body {
+    margin: 0px;
+    border: none;
+    width: 600px;
+    background-color: #2F2F2F;
+    color: #E6E0DB;
+    font-size: 16px;
+    font-family: 'Monaco', 'Courier New', 'Terminal', monospace;
+}
+
+.right {
+    margin-left: 480px;
+    display: inline;
 }

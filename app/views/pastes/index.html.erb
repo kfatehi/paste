@@ -1,4 +1,4 @@
-<div class="new"><%= link_to image_tag('new.png', :alt=>"Make a new paste."), new_paste_path %></div>
+<%= link_to image_tag('new.png', :alt=>"Make a new paste.", :class=>"left"), new_paste_path %>
 <table class="index">
 <% @pastes.each do |paste| %>
   <tr>

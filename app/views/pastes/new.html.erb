@@ -1,29 +1,10 @@
-<h1>New paste</h1>
-
+<%= set_focus "paste_body" %>
 <% form_for(@paste) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :author %><br />
-    <%= f.text_field :author, :value=>'anonymous' %>
-  </p>
-
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title, :value=>'untitled' %>
-  </p>
-  <p>
-    <%= f.label :language %><br />
-    <%= f.select :language, languages %>
-  </p>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<%= f.text_field :author, :value=>'anonymous' -%>
+<%= f.text_field :title, :value=>'untitled' -%>
+<%= f.select :language, languages %><br>
+    <%= f.text_area :body %><br/>
+    <%= link_to image_tag('back.png'), pastes_path %>
+	<div class="right"><%= image_submit_tag 'save.png' %></div>
 <% end %>
-
-<%= link_to 'Back', pastes_path %>
-

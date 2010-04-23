@@ -4,8 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= html_title(params[:id]) %></title>
+  <title><%= @paste.nil? ? "pastebot: #mindynamics @ irc.freenode.net" : "\"#{@paste.title}\" by #{@paste.author}" %></title>
   <%= stylesheet_link_tag 'paste', 'coderay' %>
+
 </head>
 <body>
 

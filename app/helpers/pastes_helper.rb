@@ -24,10 +24,6 @@ YAML
     )
   end
   
-  def html_title(id=nil)
-    id.nil? ? "pastebot: #mindynamics @ irc.freenode.net" : "paste ##{id}"
-  end
-  
   def toggle(switch)
     switch ||= '0'
     switch.to_i > 0 ? '?' : '?line_numbers=1'
@@ -35,6 +31,17 @@ YAML
   
   def paste_title(s)
     s.nil? || s.empty? || s == 'untitled' ? return : "entitled \"#{s}\""
+  end
+  
+  def set_form_focus # target first form
+    javascript_tag("Event.observe(window, 'load', function() {
+    var firstForm = $A(document.getElementsByTagName('form'))[0];
+    Form.focusFirstElement(firstForm);
+    });")
+  end
+  
+  def set_focus(id) # for formless input fields
+    javascript_tag("Event.observe(window, 'load', $('#{id}').focus());")
   end
   
 end
