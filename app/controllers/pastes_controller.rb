@@ -18,6 +18,10 @@ class PastesController < ApplicationController
     tokens = CodeRay.scan(@paste.body, @paste.language.to_sym)
     @line_numbers = params[:line_numbers]
     if @line_numbers
+      # filter out the crap
+      @line_numbers = 'table' unless @line_numbers == 'table' or
+      @line_numbers == 'list' or @line_numbers == 'inline'
+
       @code = tokens.html(:line_numbers => @line_numbers.to_sym, :wrap => :div, :css => :class)
     else
       @code = tokens.html(:line_numbers => nil, :wrap => :div, :css => :class)
