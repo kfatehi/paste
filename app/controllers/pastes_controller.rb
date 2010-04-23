@@ -15,8 +15,13 @@ class PastesController < ApplicationController
   # GET /pastes/1.xml
   def show
     @paste = Paste.find(params[:id])
-    tokens = CodeRay.scan(@paste.body, @paste.language.to_sym)
-    @code = tokens.html(:line_numbers => :inline, :wrap => :div, :css => :class)
+    tokens = CodeRay.scan(@paste.body, @paste.language.downcase!.to_sym)
+    if params[:line_numbers]
+      @code = tokens.html(:line_numbers => :inline, :wrap => :div, :css => :class)
+    else
+      @code = tokens.html(:line_numbers => nil, :wrap => :div, :css => :class)
+    end
+    else
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @paste }
@@ -85,3 +90,4 @@ class PastesController < ApplicationController
     end
   end
 end
+
