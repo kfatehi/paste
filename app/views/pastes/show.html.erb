@@ -1,0 +1,20 @@
+<p>
+  <b>Title:</b>
+  <%=h @paste.title %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%=h @paste.language %>
+</p>
+
+<p>
+  <b>Body:</b>
+	
+  <%= @code %>
+
+</p>
+
+
+<%= link_to 'Edit', edit_paste_path(@paste) %> |
+<%= link_to 'Back', pastes_path %>

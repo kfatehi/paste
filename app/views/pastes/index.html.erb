@@ -1,0 +1,24 @@
+<h1>Listing pastes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Language</th>
+    <th>Body</th>
+  </tr>
+
+<% @pastes.each do |paste| %>
+  <tr>
+    <td><%=h paste.title %></td>
+    <td><%=h paste.language %></td>
+    <td><%#=h paste.body %></td>
+    <td><%= link_to 'Show', paste %></td>
+    <td><%= link_to 'Edit', edit_paste_path(paste) %></td>
+    <td><%= link_to 'Destroy', paste, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New paste', new_paste_path %>
