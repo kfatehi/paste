@@ -9,6 +9,7 @@
   <%= @code %>
 
 <%= link_to image_tag('back.png', :alt=>"Go back to index."), pastes_path %>
+<%= link_to image_tag('cut.png', :alt=>"Delete this paste."), article, :confirm => 'Are you sure?', :method => :delete %>
 <%= link_to image_tag('new.png', :alt=>"Make a new paste."), new_paste_path %>
 <%= link_to image_tag('fix.png', :alt=>"Edit this paste."), edit_paste_path(@paste) %>
 <%= link_to image_tag('toggle.png', :alt=>"Toggle line numbers."), toggle(params[:line_numbers]) %>
